@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:title="برنامه درسی" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    -->
+
+    <!--  <EditText
+          android:id="@+id/max_possible_edit_text"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="بیشترین تعداد واحد قابل اخذ"
+          android:textColorHint="@color/text_color_2"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:layout_marginTop="8dp"
+          android:textSize="18sp"/>
+  -->
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/most_unit_layer"
+        android:layout_marginBottom="13dp" />
+
+    <LinearLayout
+        android:id="@+id/most_unit_layer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_layout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/possible_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="19"
+            android:textColor="@color/red"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="/"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/all_possible_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="20"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/class_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:text="بیشترین تعداد واحد ممکن"
+            android:textColor="@color/text_color_2"
+            android:textSize="22dp" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="15dp">
+
+        <Button
+            android:id="@+id/btn_show_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/result_btn"
+            android:text=" نمایش همه کلاس ها "
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/float_action_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn_show_all"
+            android:src="@drawable/add" />
+
+        <Button
+            android:id="@+id/btn_show_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/float_action_btn"
+            android:background="@drawable/result_btn"
+            android:text=" نمایش بهترین برنامه "
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
